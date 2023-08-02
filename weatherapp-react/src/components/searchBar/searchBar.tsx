@@ -62,28 +62,25 @@ const SearchBar: FC<SearchBarProps> = ({ handleData }) => {
     };*/
       
 
-    /*useEffect(() => {
+    useEffect(() => {
         fetchInfoFromGeoCoding();
-    }, [query]);*/
+    }, [query]);
 
     /*useEffect(() => {
         fetchInfoFromWeatherAPI();
     }, [geoCoordinates, geoCoordinates.lat, geoCoordinates.lon]);*/
 
-    useEffect(() => {console.log(geoCodingData)}, [geoCodingData]);
+    /*useEffect(() => {console.log(geoCodingData)}, [geoCodingData]);
 
     useEffect(() => {
         console.log("lat: " + geoCoordinates.lat);
         console.log("lon: " + geoCoordinates.lon);
-    }, [geoCoordinates, geoCoordinates.lat, geoCoordinates.lon]);
+    }, [geoCoordinates, geoCoordinates.lat, geoCoordinates.lon]);*/
     
     return (
       <div className="searchBar-div">
         <input type="search" name="" id="search-bar" placeholder="Search..." onChange={(e) => setQuery(e.target.value)}/>
-        <button className="search-btn" onClick={() => {
-                                                        fetchInfoFromGeoCoding();
-                                                        fetchInfoFromWeatherAPI();
-                                                      }}>
+        <button className="search-btn" onClick={() => fetchInfoFromWeatherAPI()}>
           <FaSearch />
         </button>
       </div>

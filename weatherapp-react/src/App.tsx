@@ -9,9 +9,14 @@ import Clouds from './imgs/clouds.jpeg';
 
 import './App.css';
 
+export interface WeatherData{
+  name: string;
+  main: {temp: number};
+}
+
 function App() {
 
-  const [ data, setData ] = useState<any>([]);
+  const [ data, setData ] = useState<any>({});
 
   /*const handleCityName = (value: string) => {
     setCityName(value);
@@ -34,7 +39,8 @@ function App() {
       <SearchBar 
         handleData={handleData}
       />
-      <WeatherDisplay data={data}/>
+      {data.main ? <WeatherDisplay data={data}/> : null}
+      
     </div>
   );
 }
