@@ -1,24 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
+import SearchBar from './components/searchBar';
+
+import Sun from './imgs/sun.jpeg';
+import Rain from './imgs/rain.jpeg';
+
 import './App.css';
 
 function App() {
+
+  const [ weather, setWeather ] = useState<string>("sun");
+
+  const handleWeather = () => {
+
+    if(weather === "sun"){
+      setWeather("rain");
+    }else if(weather === "rain"){
+      setWeather("sun");
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <img src={weather === "sun" ? Sun: Rain} alt="background" className='background-img'/>
+      <SearchBar handleWeather={handleWeather}/>
     </div>
   );
 }

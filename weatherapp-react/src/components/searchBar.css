@@ -1,0 +1,40 @@
+.searchBar-div {
+    z-index: 2;
+    position: relative; /* Set the position to relative */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 40px;
+}
+  
+#search-bar {
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+
+    width: 25%;
+
+    text-align: center;
+    font-size: larger;
+}
+
+.search-btn{
+    padding: 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px;
+
+    width: 5%;
+
+    text-align: center;
+    font-size: larger;
+
+    background-color: white;
+    cursor: pointer;
+}
+
+*:focus {
+    outline: none;
+}
