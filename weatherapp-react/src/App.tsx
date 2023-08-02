@@ -1,29 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import SearchBar from './components/searchBar';
+import SearchBar from './components/searchBar/searchBar';
+import WeatherDisplay from './components/weatherDisplay/weatherDisplay';
 
 import Sun from './imgs/sun.jpeg';
 import Rain from './imgs/rain.jpeg';
+import Clouds from './imgs/clouds.jpeg';
 
 import './App.css';
 
 function App() {
 
-  const [ weather, setWeather ] = useState<string>("sun");
+  const [ data, setData ] = useState<any>([]);
 
-  const handleWeather = () => {
+  /*const handleCityName = (value: string) => {
+    setCityName(value);
+  }*/
 
-    if(weather === "sun"){
-      setWeather("rain");
-    }else if(weather === "rain"){
-      setWeather("sun");
-    }
-  }
+  const handleData = (value: []) => setData(value);
+  //useEffect(() => {console.log(cityName)}, [cityName]);
+
+  useEffect(() => {
+    console.log("data: " + JSON.stringify(data));
+  }, [data]);
+
+  /*useEffect(() => {
+    console.log("data: " + JSON.stringify(data));
+  }, [data]);*/
 
   return (
     <div className="app-container">
-      <img src={weather === "sun" ? Sun: Rain} alt="background" className='background-img'/>
-      <SearchBar handleWeather={handleWeather}/>
+      <img src={Sun} alt="background" className='background-img'/>
+      <SearchBar 
+        handleData={handleData}
+      />
+      <WeatherDisplay data={data}/>
     </div>
   );
 }
