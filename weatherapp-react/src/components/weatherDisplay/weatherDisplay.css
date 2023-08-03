@@ -2,9 +2,46 @@
     z-index: 2;
     position: relative; /* Set the position to relative */
 
+    width: 100%;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    padding-top: 40px;
+    padding-top: 60px;
+}
+
+.main-info-container{
+    flex: 1;
+    height: 85%;
+
+    margin-left: 100px;
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 100px;
+
+}
+
+.bottom-info-container{
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    gap: 50px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#locationName{
+    font-weight: 700;
+    font-size: 5.5em;
 }

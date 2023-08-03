@@ -1,6 +1,11 @@
 .app-container {
   text-align: center;
   position: relative;
+
+  height: 100vh;
+  width: 100vw;
+
+  color: white;
 }
 
 .background-img {
