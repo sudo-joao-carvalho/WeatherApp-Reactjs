@@ -24,6 +24,8 @@
     align-self: flex-start;
     gap: 100px;
 
+
+    text-align: left;
 }
 
 .bottom-info-container{
