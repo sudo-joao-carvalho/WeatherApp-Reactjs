@@ -70,12 +70,12 @@ const SearchBar: FC<SearchBarProps> = ({ handleData }) => {
         fetchInfoFromWeatherAPI();
     }, [geoCoordinates, geoCoordinates.lat, geoCoordinates.lon]);*/
 
-    /*useEffect(() => {console.log(geoCodingData)}, [geoCodingData]);
+    /*useEffect(() => {console.log(geoCodingData)}, [geoCodingData]);*/
 
     useEffect(() => {
         console.log("lat: " + geoCoordinates.lat);
         console.log("lon: " + geoCoordinates.lon);
-    }, [geoCoordinates, geoCoordinates.lat, geoCoordinates.lon]);*/
+    }, [geoCoordinates, geoCoordinates.lat, geoCoordinates.lon]);
     
     return (
       <div className="searchBar-div">
