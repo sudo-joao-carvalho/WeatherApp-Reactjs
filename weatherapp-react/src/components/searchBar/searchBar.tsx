@@ -90,7 +90,7 @@ const SearchBar: FC<SearchBarProps> = ({ handleData }) => {
             className="search-btn" 
             onClick={() => fetchInfoFromWeatherAPI()}
         >
-          <FaSearch />
+          <FaSearch color="white" size={20}/>
         </button>
       </div>
     );

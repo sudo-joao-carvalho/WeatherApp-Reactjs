@@ -12,7 +12,7 @@
 #search-bar {
     padding: 15px;
     border-radius: 25px;
-    border: 2px solid white;
+    border: 3px solid white;
     background-color: transparent;
 
     width: 25%;
@@ -22,13 +22,14 @@
 }
 
 #search-bar::placeholder{
-    color: black;
+    color: white;
+    font-weight: bold;
 }
 
 .search-btn{
     padding: 15px;
     margin-left: 10px;
-    border: 2px solid white;
+    border: 3px solid white;
     border-radius: 25px;
 
     width: 5%;

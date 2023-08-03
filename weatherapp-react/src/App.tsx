@@ -11,7 +11,12 @@ import './App.css';
 
 export interface WeatherData{
   name: string;
-  main: {temp: number};
+  main: {temp: number,
+         temp_min: number,
+         temp_max: number,
+        };
+  wind: {speed: number};
+  clouds: {all: number};
 }
 
 function App() {
@@ -39,8 +44,7 @@ function App() {
       <SearchBar 
         handleData={handleData}
       />
-      {data.main ? <WeatherDisplay data={data}/> : null}
-      
+      {data.main && data.wind && data.clouds ? <WeatherDisplay data={data}/> : null}
     </div>
   );
 }
