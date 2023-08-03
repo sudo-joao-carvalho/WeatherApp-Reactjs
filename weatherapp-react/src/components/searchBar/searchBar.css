@@ -12,7 +12,8 @@
 #search-bar {
     padding: 15px;
     border-radius: 25px;
-    border: none;
+    border: 2px solid white;
+    background-color: transparent;
 
     width: 25%;
 
@@ -20,10 +21,14 @@
     font-size: larger;
 }
 
+#search-bar::placeholder{
+    color: black;
+}
+
 .search-btn{
     padding: 15px;
     margin-left: 10px;
-    border: none;
+    border: 2px solid white;
     border-radius: 25px;
 
     width: 5%;
@@ -31,7 +36,7 @@
     text-align: center;
     font-size: larger;
 
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 }
 

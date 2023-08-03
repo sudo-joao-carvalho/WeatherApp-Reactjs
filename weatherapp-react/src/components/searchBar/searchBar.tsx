@@ -15,12 +15,6 @@ const SearchBar: FC<SearchBarProps> = ({ handleData }) => {
     const urlGeoCoding = `http://api.openweathermap.org/geo/1.0/direct?q=${query}&appid=7d70cba9d5e9a20d12900d0f3a337fed`
     const urlWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${geoCoordinates.lat}&lon=${geoCoordinates.lon}&appid=7d70cba9d5e9a20d12900d0f3a337fed`
 
-    /*const handleCoordinates = (value: {lat: number, lon: number}) => {
-        setGeoCoordinates({lat: value.lat, lon: value.lon});
-    } 
-
-    const handleGeoCodingData = (value: {}) => setGeoCodingData(value);*/
-
     const fetchInfoFromGeoCoding = async () => {
         return await fetch(urlGeoCoding)
             .then((res) => res.json())
@@ -39,7 +33,13 @@ const SearchBar: FC<SearchBarProps> = ({ handleData }) => {
 
     }
 
+    const handlKeyPressed = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === "Enter")
+            fetchInfoFromWeatherAPI();
+    }
+
     // Async/Await version without .then
+
     /*const fetchInfoFromGeoCoding = async () => {
         try {
             const res = await fetch(urlGeoCoding);
@@ -79,8 +79,17 @@ const SearchBar: FC<SearchBarProps> = ({ handleData }) => {
     
     return (
       <div className="searchBar-div">
-        <input type="search" name="" id="search-bar" placeholder="Search..." onChange={(e) => setQuery(e.target.value)}/>
-        <button className="search-btn" onClick={() => fetchInfoFromWeatherAPI()}>
+        <input 
+            type="search" 
+            name="" 
+            id="search-bar" 
+            placeholder="Search..." 
+            onChange={(e) => setQuery(e.target.value)} 
+            onKeyDown={(event) => handlKeyPressed(event)}/>
+        <button 
+            className="search-btn" 
+            onClick={() => fetchInfoFromWeatherAPI()}
+        >
           <FaSearch />
         </button>
       </div>
